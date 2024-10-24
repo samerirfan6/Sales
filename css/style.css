@@ -1,0 +1,568 @@
+/* Globals */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    color: #000;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 400;
+    position: relative;
+    z-index: 10;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* font */
+@font-face {
+    font-family: "OpenSans-SemiBold";
+    src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "OpenSans-Light";
+    src: url(../fonts/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url(../fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "OpenSans-Regular";
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+/* header-top */
+
+header .top {
+    padding: 50px 0 35px 0;
+    position: relative;
+}
+
+header .top::after {
+    content: "";
+    border-bottom: 1px solid #dbdbdb;
+    position: absolute;
+    width: 50%;
+    right: 25%;
+    bottom: 0;
+}
+
+header .top .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .top .content img {
+    max-width: 280px;
+    height: 75px;
+}
+
+header .top .right span {
+    display: block;
+    font-size: 35px;
+    font-family: "OpenSans-SemiBold";
+}
+
+header .top .right a {
+    color: #8F8F8F;
+    font-size: 16px;
+    font-family: "OpenSans-Light";
+}
+
+/* header-bottom */
+header .bottom {
+    padding: 25px 0 0;
+}
+
+header .bottom .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .bottom .content nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+header .bottom .content nav ul li a {
+    font-size: 21px;
+    font-family: "OpenSans-SemiBold";
+    color: #323232;
+    transition: all ease-in-out .3s;
+    position: relative;
+    padding: 20px 0;
+}
+
+header .bottom .content nav ul li a:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 0px solid #009acf;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+header .bottom .content nav ul li a:hover {
+    color: #009acf;
+}
+
+header .bottom .content nav ul li a:hover::before {
+    opacity: 1;
+    border-bottom: 13px solid #009acf;
+}
+
+/* banner */
+
+.banner {
+    background: url(../images/banner-background.png) no-repeat center;
+    background-size: cover;
+    padding: 100px 0 140px 0;
+    border-bottom: 9px solid #009acf;
+}
+
+.banner .content {
+    text-align: center;
+}
+
+.banner .content h2 {
+    font-size: 41px;
+    color: #373737;
+    margin-bottom: 45px;
+    line-height: 1.1;
+}
+
+.banner .content h2 span {
+    font-family: "OpenSans-Bold";
+    color: #009acf;
+    font-family: "OpenSans-Regular";
+}
+
+.banner .content p {
+    max-width: 830px;
+    text-align: center;
+    font-size: 19px;
+    margin: 0 auto 60px;
+    line-height: 1.3;
+}
+
+.banner .content .btn {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.banner .content .btn a {
+    background-color: #ce9d00;
+    padding: 35px 60px;
+    border-radius: 20px;
+    font-size: 34px;
+    font-family: "OpenSans-Regular";
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+}
+
+.banner .content .btn a:hover {
+    background-color: #009acf;
+    color: #fff;
+}
+
+.banner .content .btn .contact {
+    background-color: transparent;
+    color: #009acf;
+    border: 3px solid #c5cdcb;
+}
+
+/* sales */
+
+.sales {
+    padding: 45px 0;
+}
+
+.sales .heading h2 {
+    font-family: "OpenSans-Regular";
+    font: 40px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.sales .content {
+    text-align: center;
+}
+
+.sales .content img {
+    margin-bottom: 33px;
+}
+
+.sales .content h3 {
+    font-family: "OpenSans-Bold";
+    font-size: 20px;
+    margin-bottom: 25px;
+
+}
+
+.sales .content p {
+    font-family: "OpenSans-Regular";
+    font-size: 16px;
+    margin-bottom: 22px;
+    line-height: 1.3;
+}
+
+.sales .content a {
+    background-color: #009acf;
+    font-size: 15px;
+    font-family: "OpenSans-Regular";
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 5px;
+    transition: all ease-in-out .3s;
+}
+
+.sales .content a:hover {
+    background-color: #ce9d00;
+}
+
+/* taining */
+.training {
+    background-color: RGBA(1, 152, 207, 1);
+    padding: 57px 0;
+}
+
+.training .content h2 {
+    font-family: "OpenSans-Regular";
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 37px;
+}
+
+.training .content h2 .force {
+    font-family: "OpenSans-Bold";
+}
+
+.training .inner {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.training .inner img {
+    margin-bottom: 21px;
+    max-width: 128px;
+    opacity: 0.5;
+}
+
+.training .inner h3 {
+    font-family: "OpenSans-Bold";
+    font-size: 23px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.training .inner p {
+    color: #fff;
+    font-size: 15px;
+    font-family: "OpenSans-Regular";
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.training .inner a {
+    background-color: #007aa6;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-family: "OpenSans-Regular";
+    padding: 15px 33px;
+    border-radius: 5px;
+}
+
+.training .works {
+    text-align: center;
+}
+
+.training .works a img {
+    max-width: 18px;
+}
+
+.training .works a {
+    color: #fff;
+    font-family: "OpenSans-Regular";
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+/* client */
+.client {
+    padding: 75px 0;
+}
+
+.client .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.client .right {
+    text-align: center;
+}
+
+.client .right h2 {
+    font-family: "OpenSans-Bold";
+    font-size: 29px;
+    color: #373737;
+    margin-bottom: 32px;
+
+}
+
+.client .right h2 .saying {
+    color: #009acf;
+    font-family: "OpenSans-Regular";
+}
+
+.client .right p {
+    color: #ACACAC;
+    font-size: 18px;
+    font-family: "OpenSans-Regular";
+    max-width: 476px;
+    margin-bottom: 30px;
+    max-width: 376px;
+}
+
+.client .right .enim {
+    color: #000;
+}
+
+.client .right a {
+    color: #009acf;
+    font-family: "OpenSans-Regular";
+}
+
+.client .left {
+    background-color: RGBA(244, 244, 244, 1);
+    padding: 25px 15px;
+    text-align: center;
+    border-bottom:6px solid  #009acf;
+}
+
+.client .left h3 {
+    font-family: "OpenSans-Bold";
+    font-size: 30px;
+    color: #373737;
+    margin-bottom: 34px;
+}
+
+.client .left .inner{
+    display: flex;
+    align-items: center;
+}
+
+.client .left .inner span{
+    color: #009acf;
+    font-family: "OpenSans-Bold";
+    font-size: 22px;
+    padding-right: 20px;
+}
+
+.client .left .inner p {
+    max-width: 353px;
+    color: #717171;
+    font-size: 15px;
+    line-height: 1.3;
+    font-family: "OpenSans-Regular";
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.client .left .inner p .read {
+    font-family: "OpenSans-SemiBold";
+
+}
+
+/* team */
+.team{
+ background-color: RGBA(251, 251, 251, 1);
+ padding: 61px 0 0;   
+}
+
+.team .content{
+    text-align: center;
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.team .content::after{
+    content: "";
+    position: absolute;
+    border-top: 1px solid #000;
+    width: 100%;
+    right: 0%;
+    top: -20px;
+}
+
+.team .content::before{
+    content: "";
+    position: absolute;
+    border-top: 1px solid #000;
+    width: 100%;
+    right: 0%;
+    bottom: -35px;
+}
+
+.team .content h2{
+    font-family: "OpenSans-Bold";
+    font-size: 29px;
+    color: #373737;
+    margin-bottom:15px;
+}
+
+.team .content span{
+    font-size: 29px;
+    color: #373737;
+    font-family: "OpenSans-Regular";
+    display: block;
+    margin-bottom:20px;
+}
+
+.team .content .gap{
+    color: #009acf;
+}
+
+/* footer */
+footer{
+    padding:14px 0;
+    background-color:#0198cf;
+}
+
+footer .content{
+    background-color: #18a1d3;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer .content i{
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+footer .content span{
+    font-family: "OpenSans-Bold";
+    font-size: 13px;
+    color: #fff;
+    display: block;
+    margin-bottom:13px;
+}
+
+footer .content p{
+    max-width:269px;
+    font-family: "OpenSans-Regular";
+    font-size: 13px;
+    color:#fff;
+    line-height: 1.3;
+    margin: 0 auto;
+}
+
+footer .content .email{
+    display: flex;
+    margin-bottom: 44px;
+}
+
+footer .content .icons img{
+    max-width:190px;
+}
+
+/* copy-right */
+.copy-right{
+    padding: 20px 0;
+}
+
+.copy-right .content span{
+    color: #009acf;
+    font-size: 19px;
+    font-family: "OpenSans-Regular";
+}
+
+.copy-right .content .rights{
+    font-family: "OpenSans-Bold";
+}
